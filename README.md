@@ -1,6 +1,6 @@
 # GNOME Theme Sync
 
-Automatically synchronizes GTK3 and Papirus icon themes with GNOME's light/dark mode preference.
+Automatically synchronizes GTK3 and icon themes with GNOME's light/dark mode preference.
 
 ## Features
 
