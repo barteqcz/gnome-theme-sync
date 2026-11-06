@@ -78,8 +78,11 @@ echo "Installation complete! The theme sync service will start working after a r
 echo "Installed the system-wide user service to ${SERVICE_PATH}"
 echo "Installed the executable to ${SCRIPT_PATH}"
 echo ""
-read -rp "Reboot the system? [Y/n] " answer
 
-if [[ "$answer" =~ ^([Yy]|)$ ]]; then
+read -rp "Reboot the system? [y/N] " answer
+
+if [[ "$answer" =~ ^[Yy]$ ]]; then
     systemctl reboot
+else
+    echo "Reboot skipped. Please reboot manually when convenient."
 fi
