@@ -79,10 +79,20 @@ echo "Installed the system-wide user service to ${SERVICE_PATH}"
 echo "Installed the executable to ${SCRIPT_PATH}"
 echo ""
 
-read -rp "Reboot the system? [y/N] " answer
+while true; do
+    read -rp "Reboot the system? [y/N] " answer </dev/tty
 
-if [[ "$answer" =~ ^[Yy]$ ]]; then
-    systemctl reboot
-else
-    echo "Reboot skipped. Please reboot manually when convenient."
-fi
+    case "$answer" in
+        [Yy])
+            systemctl reboot
+            break
+            ;;
+        [Nn]|"")
+            echo "Reboot skipped. Please reboot manually when convenient."
+            break
+            ;;
+        *)
+            echo "Invalid input. Please enter y or n."
+            ;;
+    esac
+done
