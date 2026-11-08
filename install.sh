@@ -74,7 +74,7 @@ chmod 644 "$SERVICE_PATH"
 systemctl --global enable gnome-theme-sync.service
 
 echo ""
-echo "Installation complete! The theme sync service will start working after a reboot."
+echo "Installation complete!"
 echo "Installed the system-wide user service to ${SERVICE_PATH}"
 echo "Installed the executable to ${SCRIPT_PATH}"
 echo ""
