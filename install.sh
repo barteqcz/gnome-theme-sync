@@ -78,21 +78,4 @@ echo "Installation complete! The theme sync service will start working after a r
 echo "Installed the system-wide user service to ${SERVICE_PATH}"
 echo "Installed the executable to ${SCRIPT_PATH}"
 echo ""
-
-while true; do
-    read -rp "Reboot the system? [y/N] " answer </dev/tty
-
-    case "$answer" in
-        [Yy])
-            systemctl reboot
-            break
-            ;;
-        [Nn]|"")
-            echo "Reboot skipped. Please reboot manually when convenient."
-            break
-            ;;
-        *)
-            echo "Invalid input. Please enter y or n."
-            ;;
-    esac
-done
+echo "Log out and then back in to start the service."
